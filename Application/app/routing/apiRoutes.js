@@ -29,4 +29,21 @@ module.exports = function(app) {
 
     var userData = req.body;
     var userResults = userData.scores;
+
+
+    var scoreDifference;
+
+
+    for (var i - 0; i < friendsList.length; i++) {
+      var currentFriend = friendsList[i];
+      scoreDifference = 0;
+
+
+    for (var j = 0; j < currentFriend.scores.length; j++) {
+      var currentFriendScore = currentFriend.scores[j];
+      var currentUserScore = userResults[j];
+    }
+
+    }
+  });
 };
