@@ -19,9 +19,8 @@ module.exports = function(app) {
     // ---------------------------------------------------------------------------
   
   app.post("/api/friends", function(req, res) {
-console.log(req.body);
+    console.log(req.body);
     var userScore = req.body.scores;
-    for 
-    }
+    
   });
 };
