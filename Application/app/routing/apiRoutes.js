@@ -20,7 +20,13 @@ module.exports = function(app) {
   
   app.post("/api/friends", function(req, res) {
     console.log(req.body);
-    var userScore = req.body.scores;
+    var match = {
+      name: "",
+      photo: "",
+      difference: Infinity
+    };
     
-  });
+
+    var userData = req.body;
+    var userResults = userData.scores;
 };
