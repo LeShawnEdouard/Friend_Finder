@@ -79,4 +79,8 @@ var friendsList = [
             5
           ]
       }
-] 
+];
+
+// This is used to export the friendsList array. 
+//Require is used to make this available to other files
+module.exports = friendsList;
