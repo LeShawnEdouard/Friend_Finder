@@ -38,13 +38,14 @@ module.exports = function(app) {
       var currentFriend = friendsList[i];
       scoreDifference = 0;
 
+      console.log(currentFriend.name);
 
       for (var j = 0; j < currentFriend.scores.length; j++) {
         var currentFriendScore = currentFriend.scores[j];
         var currentUserScore = userResults[j];
 
 
-        scoreDifference += Math.ads(parseInt(currentUserScore) - parseInt(currentFriendScore));
+        scoreDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentFriendScore));
       }
 
 

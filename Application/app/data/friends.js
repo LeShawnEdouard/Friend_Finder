@@ -1,3 +1,5 @@
+// This is an array that will hold all possible friend matches //
+
 var friendsList = [
     {
         "name":"Robert Downey Jr.",
