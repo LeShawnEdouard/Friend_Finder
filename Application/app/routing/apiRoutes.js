@@ -3,7 +3,7 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var friendsData = require("../data/friends");
+var friendsList = require("../data/friends");
 
 
 module.exports = function(app) {
@@ -12,7 +12,7 @@ module.exports = function(app) {
     // ---------------------------------------------------------------------------
   
   app.get("/api/friends", function(req, res) {
-    res.json(friendsData);
+    res.json(friendsList);
   });
   
 
@@ -34,25 +34,30 @@ module.exports = function(app) {
     var scoreDifference;
 
 
-    for (var i - 0; i < friendsList.length; i++) {
+    for (var i = 0; i < friendsList.length; i++) {
       var currentFriend = friendsList[i];
       scoreDifference = 0;
 
 
-    for (var j = 0; j < currentFriend.scores.length; j++) {
-      var currentFriendScore = currentFriend.scores[j];
-      var currentUserScore = userResults[j];
+      for (var j = 0; j < currentFriend.scores.length; j++) {
+        var currentFriendScore = currentFriend.scores[j];
+        var currentUserScore = userResults[j];
 
 
-      scoreDifference += Math.ads(parseInt(currentUserScore) - parseInt(currentFriendScore));
+        scoreDifference += Math.ads(parseInt(currentUserScore) - parseInt(currentFriendScore));
+      }
+
+
+      if (scoreDifference <= match.difference) {
+
+        match.name = currentFriend.name;
+        match.photo = currentFriend.photo;
+        match.difference = scoreDifference;
+      }
     }
 
+    friendsList.push(userData);
 
-    if (scoreDifference <= match.difference) {
-
-      match.name = currentFriend.name;
-      match.photo = currentFriend.photo;
-      match.difference = scoreDifference;
-    }
+    res.json(match);
   });
 };

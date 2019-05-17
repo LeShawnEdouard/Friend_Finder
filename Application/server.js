@@ -1,6 +1,6 @@
 // Dependencies
 var express = require("express");
-var path = require("path");
+// var path = require("path");
 
 // Set our port to 8080
 var PORT = 8080;
