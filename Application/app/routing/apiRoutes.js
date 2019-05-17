@@ -42,8 +42,17 @@ module.exports = function(app) {
     for (var j = 0; j < currentFriend.scores.length; j++) {
       var currentFriendScore = currentFriend.scores[j];
       var currentUserScore = userResults[j];
+
+
+      scoreDifference += Math.ads(parseInt(currentUserScore) - parseInt(currentFriendScore));
     }
 
+
+    if (scoreDifference <= match.difference) {
+
+      match.name = currentFriend.name;
+      match.photo = currentFriend.photo;
+      match.difference = scoreDifference;
     }
   });
 };
