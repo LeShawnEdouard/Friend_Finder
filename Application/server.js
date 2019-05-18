@@ -12,11 +12,12 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+// We point our server to our route files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URL.
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-
+// Code used to start our server
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
