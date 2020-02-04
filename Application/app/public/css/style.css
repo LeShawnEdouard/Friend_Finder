@@ -1,5 +1,7 @@
 .image-image {
     background-image:url("../memphis-colorful/memphis-colorful.jpg");
+    height: 300px;
+    width: 300px;
 }
 
 #question-container {
